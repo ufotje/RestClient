@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BookController {
@@ -30,7 +31,7 @@ public class BookController {
         return "/books/author";
     }
 
-    @GetMapping("{title}")
+    @PostMapping("/{title}")
     public String getBookByTitle(@PathVariable("title") String title, ModelMap model) {
         Book book = service.findBookByTitle(title);
         model.addAttribute("book", book);

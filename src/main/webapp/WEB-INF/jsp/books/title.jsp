@@ -12,6 +12,11 @@
 </head>
 <body>
 <%@include file="../navbar.jsp" %>
-<p>Boek op titel</p>
+
+<form action="" method="post">
+    Titel: &nbsp;&nbsp; &nbsp; &nbsp;<input type="text" name="title" /><br>
+    &nbsp;<br>
+    <input type="submit" value="zoeken" />
+</form>
 </body>
 </html>
