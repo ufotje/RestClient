@@ -13,5 +13,10 @@
 <body>
 <%@include file="../navbar.jsp" %>
 <p>Boek op auteur</p>
+<form action="" method="post">
+    Auteur: &nbsp;&nbsp; &nbsp; &nbsp;<input type="text" name="author" />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="submit" value="zoeken" />
+</form>
 </body>
 </html>

@@ -27,7 +27,7 @@ public class Reserve {
         this.eMail = eMail;
         this.pickUpDate = pickUpDate;
         title = books.getTitle();
-        author = books.getAuthor();
+        author = books.getAuthors();
         isbn = books.getIsbn();
         depot = books.getDepot();
     }
@@ -37,7 +37,7 @@ public class Reserve {
         this.member = member;
         this.pickUpDate = pickUpDate;
         title = books.getTitle();
-        author = books.getAuthor();
+        author = books.getAuthors();
         isbn = books.getIsbn();
         depot = books.getDepot();
         firstName = member.getFirstName();

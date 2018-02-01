@@ -13,5 +13,10 @@
 <body>
 <%@include file="../navbar.jsp" %>
 <p>Boek op onderwerp</p>
+<form action="" method="post">
+    Onderwerp: &nbsp;&nbsp; &nbsp; &nbsp;<input type="text" name="topic" />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="submit" value="zoeken" />
+</form>
 </body>
 </html>

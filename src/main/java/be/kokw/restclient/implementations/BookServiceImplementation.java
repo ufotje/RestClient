@@ -34,13 +34,20 @@ public class BookServiceImplementation implements BookService {
     }
 
     @Override
+    public List<Books> findAllBooks() {
+        ResponseEntity<Books[]> responseEntity = template.getForEntity(baseUrl + "/books/search/all", Books[].class);
+        return Arrays.asList(responseEntity.getBody());
+    }
+
+    @Override
     public List<Books> findBookByAuthor(String author){
         ResponseEntity<Books[]> response = template.getForEntity(baseUrl + "/books/search/author/" + author, Books[].class);
         return Arrays.asList(response.getBody());
     }
 
     @Override
-    public Books findBookByTitle(String title) {
-        return template.getForObject(baseUrl + "/books/search/title/" + title, Books.class, title);
+    public List<Books> findBookByTitle(String title) {
+        ResponseEntity<Books[]> response = template.getForEntity(baseUrl + "/books/search/title/" + title, Books[].class);
+        return Arrays.asList(response.getBody());
     }
 }

@@ -3,22 +3,22 @@ package be.kokw.restclient.entities;
 public class Books {
     private long id;
     private String title;
-    private String author;
+    private String authors;
     private String isbn;
     private String depot;
-    private String topic;
+    private String topics;
     private String nrOfPages;
     private boolean inStock;
 
     public Books() {
     }
 
-    public Books(String title, String author, String isbn, String depot, String topic, String nrOfPages, boolean inStock) {
+    public Books(String title, String authors, String isbn, String depot, String topics, String nrOfPages, boolean inStock) {
         this.title = title;
-        this.author = author;
+        this.authors = authors;
         this.isbn = isbn;
         this.depot = depot;
-        this.topic = topic;
+        this.topics = topics;
         this.nrOfPages = nrOfPages;
         this.inStock = inStock;
     }
@@ -39,12 +39,12 @@ public class Books {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(String authors) {
+        this.authors = authors;
     }
 
     public String getIsbn() {
@@ -63,12 +63,12 @@ public class Books {
         this.depot = depot;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getTopics() {
+        return topics;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setTopics(String topics) {
+        this.topics = topics;
     }
 
     public String getNrOfPages() {

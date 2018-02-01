@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface BookService {
     List<Books> findBookByTopic(String topic);
+    List<Books> findAllBooks();
     List<Books> findBookByAuthor(String author);
-    Books findBookByTitle(String title);
+    List<Books> findBookByTitle(String title);
 }
