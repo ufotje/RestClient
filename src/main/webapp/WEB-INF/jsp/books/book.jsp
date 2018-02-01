@@ -12,6 +12,6 @@
 </head>
 <body>
 <%@include file="../navbar.jsp" %>
-${book}
+${books}
 </body>
 </html>

@@ -1,7 +1,7 @@
 package be.kokw.restclient.controllers;
 
 
-import be.kokw.restclient.entities.Book;
+import be.kokw.restclient.entities.Books;
 import be.kokw.restclient.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,11 +31,11 @@ public class BookController {
         return "/books/author";
     }
 
-    @PostMapping("/{title}")
+    @PostMapping("/title{title}")
     public String getBookByTitle(@PathVariable("title") String title, ModelMap model) {
-        Book book = service.findBookByTitle(title);
-        model.addAttribute("book", book);
-        return "books/book";
+        Books books = service.findBookByTitle(title);
+        model.addAttribute("book", books);
+        return "books/books";
     }
 
 }

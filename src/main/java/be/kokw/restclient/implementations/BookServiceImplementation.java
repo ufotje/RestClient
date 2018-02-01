@@ -1,7 +1,7 @@
 package be.kokw.restclient.implementations;
 
 
-import be.kokw.restclient.entities.Book;
+import be.kokw.restclient.entities.Books;
 import be.kokw.restclient.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,19 +28,19 @@ public class BookServiceImplementation implements BookService {
     }
 
     @Override
-    public List<Book> findBookByTopic(String topic) {
-        ResponseEntity<Book[]> response = template.getForEntity(baseUrl + "/books/search{topic}", Book[].class);
+    public List<Books> findBookByTopic(String topic) {
+        ResponseEntity<Books[]> response = template.getForEntity(baseUrl + "/books/search/topic/" + topic, Books[].class);
         return Arrays.asList(response.getBody());
     }
 
     @Override
-    public List<Book> findBookByAuthor(String Author){
-        ResponseEntity<Book[]> response = template.getForEntity(baseUrl + "/books/search{author}", Book[].class);
+    public List<Books> findBookByAuthor(String author){
+        ResponseEntity<Books[]> response = template.getForEntity(baseUrl + "/books/search/author/" + author, Books[].class);
         return Arrays.asList(response.getBody());
     }
 
     @Override
-    public Book findBookByTitle(String title) {
-        return template.getForObject(baseUrl + "/books/search{title}", Book.class, title);
+    public Books findBookByTitle(String title) {
+        return template.getForObject(baseUrl + "/books/search/title/" + title, Books.class, title);
     }
 }

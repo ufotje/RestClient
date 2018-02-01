@@ -1,6 +1,6 @@
 package be.kokw.restclient.entities;
 
-public class Book {
+public class Books {
     private long id;
     private String title;
     private String author;
@@ -10,10 +10,10 @@ public class Book {
     private String nrOfPages;
     private boolean inStock;
 
-    public Book() {
+    public Books() {
     }
 
-    public Book(String title, String author, String isbn, String depot, String topic, String nrOfPages, boolean inStock) {
+    public Books(String title, String author, String isbn, String depot, String topic, String nrOfPages, boolean inStock) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;

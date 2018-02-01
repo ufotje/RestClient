@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Reserve {
     private int id;
-    private Book book;
+    private Books books;
     private Digital digital;
     private Member member;
     private String firstName;
@@ -20,26 +20,26 @@ public class Reserve {
     public Reserve() {
     }
 
-    public Reserve(Book book, String firstName, String lastName, String eMail, LocalDate pickUpDate) {
-        this.book = book;
+    public Reserve(Books books, String firstName, String lastName, String eMail, LocalDate pickUpDate) {
+        this.books = books;
         this.firstName = firstName;
         this.lastName = lastName;
         this.eMail = eMail;
         this.pickUpDate = pickUpDate;
-        title = book.getTitle();
-        author = book.getAuthor();
-        isbn = book.getIsbn();
-        depot = book.getDepot();
+        title = books.getTitle();
+        author = books.getAuthor();
+        isbn = books.getIsbn();
+        depot = books.getDepot();
     }
 
-    public Reserve(Book book, Member member, LocalDate pickUpDate) {
-        this.book = book;
+    public Reserve(Books books, Member member, LocalDate pickUpDate) {
+        this.books = books;
         this.member = member;
         this.pickUpDate = pickUpDate;
-        title = book.getTitle();
-        author = book.getAuthor();
-        isbn = book.getIsbn();
-        depot = book.getDepot();
+        title = books.getTitle();
+        author = books.getAuthor();
+        isbn = books.getIsbn();
+        depot = books.getDepot();
         firstName = member.getFirstName();
         lastName = member.getLastName();
         eMail = member.getEMail();
@@ -66,12 +66,12 @@ public class Reserve {
         this.id = id;
     }
 
-    public Book getBook() {
-        return book;
+    public Books getBooks() {
+        return books;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setBooks(Books books) {
+        this.books = books;
     }
 
     public Digital getDigital() {
