@@ -9,12 +9,21 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar.css">
 <div class="navbar">
     <a href="#home">Home</a>
-    <a href="#news">News</a>
     <div class="dropdown">
-        <button class="dropbtn" onclick="myFunction()">Boeken
+        <button class="dropbtn" onclick="myFunction()">Leden
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content" id="myDropdown">
+            <a href="${pageContext.request.contextPath}members">Lid worden</a>
+            <a href="${pageContext.request.contextPath}author">Zoek op auteur</a>
+            <a href="${pageContext.request.contextPath}topic">Zoek op onderwerp</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn2" onclick="myFunction()">Boeken
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown2">
             <a href="${pageContext.request.contextPath}title">Zoek op titel</a>
             <a href="${pageContext.request.contextPath}author">Zoek op auteur</a>
             <a href="${pageContext.request.contextPath}topic">Zoek op onderwerp</a>
@@ -29,6 +38,12 @@
     window.onclick = function(e) {
         if (!e.target.matches('.dropbtn')) {
             var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
+            }
+        }
+        if (!e.target.matches('.dropbtn2')) {
+            var myDropdown = document.getElementById("myDropdown2");
             if (myDropdown.classList.contains('show')) {
                 myDropdown.classList.remove('show');
             }
