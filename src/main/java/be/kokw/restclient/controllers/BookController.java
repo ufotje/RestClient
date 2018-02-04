@@ -9,28 +9,38 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
 public class BookController {
+    @Autowired
     private BookService service;
 
 
-    @GetMapping("title")
-    public String handleGetTitle(ModelMap map) {
+    @GetMapping("allBooks")
+    public String handleGetAllBooks(ModelMap map) {
         map.addAttribute("books",service.findAllBooks());
-        return "/books/title";
+        return "/books/allBooks";
+    }
+
+    @GetMapping("title")
+    public ModelAndView handleGetTitle(){
+        String title = "Zoek boeken op titel!";
+        return new ModelAndView("/books/title", "title", title );
     }
 
     @GetMapping("topic")
-    public String handleGetTopic() {
-        return "/books/topic";
+    public ModelAndView handleGetTopic() {
+        String title = "Zoek boeken op topic!";
+        return new ModelAndView("/books/title", "title", title );
     }
 
     @GetMapping("author")
-    public String handleGetAuthor() {
-        return "/books/author";
+    public ModelAndView handleGetAuthor() {
+        String title = "Zoek boeken op auteur!";
+        return new ModelAndView("/books/title", "title", title );
     }
 
     @PostMapping("/title")

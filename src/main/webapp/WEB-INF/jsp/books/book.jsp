@@ -5,10 +5,13 @@
   Time: 23:22
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <link REL="SHORTCUT ICON" HREF="${pageContext.request.contextPath}/images/logoKOKW.ico">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/general.css">
     <title>Uw Gezocht Boek</title>
 </head>
 <body>

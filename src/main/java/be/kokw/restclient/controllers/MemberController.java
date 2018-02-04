@@ -9,8 +9,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Controller
@@ -24,17 +22,13 @@ public class MemberController {
 
     @GetMapping("members")
     public String handleMembers(Map<String, Object> model) {
-        Member member = new Member();
-        model.put("memberForm", member);
-        Map<String,String> genderList = new LinkedHashMap<String,String>();
-        genderList.put("M", "Mannelijk");
-        genderList.put("V", "Vrouwelijk");
+        model.put("memberForm", new Member());
         return "members/addMember";
     }
 
-    @PostMapping("/members")
-    public String handleGetMember(@ModelAttribute("memberForm") Member member, ModelMap model){
-        model.addAttribute("member",service.addMember(member));
+    @PostMapping("members")
+    public String handleGetMember(@ModelAttribute("memberForm") Member member, ModelMap model) {
+        model.addAttribute("member", service.addMember(member));
         return "members/memberCreated";
     }
 }

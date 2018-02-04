@@ -5,14 +5,17 @@
   Time: 21:50
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <html>
 <head>
-    <title>Search Books By Topic</title>
+    <link REL="SHORTCUT ICON" HREF="${pageContext.request.contextPath}/images/logoKOKW.ico">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/general.css">
+    <title>${title}</title>
 </head>
 <body>
 <%@include file="../navbar.jsp" %>
-<p>Boek op onderwerp</p>
+<h2>${title}</h2>
 <form action="" method="post">
     Onderwerp: &nbsp;&nbsp; &nbsp; &nbsp;<input type="text" name="topic" />
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
