@@ -1,6 +1,8 @@
 package be.kokw.restclient.entities;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Member {
     private long id;
@@ -17,16 +19,16 @@ public class Member {
     public Member() {
     }
 
-    public Member(String firstName, String lastName, String street, String houseNr, int zip, String city, String gender, String eMail, LocalDate bDay) {
+    public Member(String firstName, String lastName, String street, String houseNr, String zip, String city, String gender, String eMail, Date bDay) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
         this.houseNr = houseNr;
-        this.zip = zip;
+        this.zip = Integer.parseInt(zip);
         this.city = city;
         this.gender = gender;
         this.eMail = eMail;
-        this.bDay = bDay;
+        this.bDay = bDay.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
     public long getId() {

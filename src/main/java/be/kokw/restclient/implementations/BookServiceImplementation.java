@@ -50,4 +50,9 @@ public class BookServiceImplementation implements BookService {
         ResponseEntity<Books[]> response = template.getForEntity(baseUrl + "/books/search/title/" + title, Books[].class);
         return Arrays.asList(response.getBody());
     }
+
+    @Override
+    public Books findBookByTitleAndVolume(String title, int volume) {
+        return template.getForObject(baseUrl + "/books/search/title/" + title + "/" + volume, Books.class, title, volume);
+    }
 }

@@ -17,7 +17,7 @@
 <%@include file="../navbar.jsp" %>
 <div class="container">
     <%--@elvariable id="memberForm" type=""--%>
-    <form:form action="" method="post" commandName="memberForm">
+    <form:form method="post" commandName="memberForm">
         <h2>Lid Worden!</h2>
         <div class="table">
             <table align="center">
@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                     <td><label for="zip">Zipcode:</label></td>
-                    <td><form:input path="zip" type="number" placeholder="enter zipcode" name="zip" id="zip"
+                    <td><form:input path="zip" type="text" placeholder="enter zipcode" name="zip" id="zip"
                                     required="required"/></td>
                 </tr>
 
@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <td><label for="bDay">Geboortedatum:</label></td>
-                    <td><form:input path="bDay" type="date" placeholder="Enter Day of Birth" name="bDay" id="bDay"
+                    <td><form:input path="bDay" type="datetime-local" placeholder="Enter Day of Birth" name="bDay" id="bDay"
                                     required="required"/></td>
                 </tr>
                 <tr>

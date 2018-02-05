@@ -24,6 +24,11 @@ public class MemberServiceImplementation implements MemberService {
 
     @Override
     public Member addMember(Member member) {
-        return template.getForObject(baseUrl + "members/register{m}", Member.class, member);
+        return template.getForObject(baseUrl + "members/register/" + member, Member.class, member);
+    }
+
+    @Override
+    public Member findMemberByFirstNameAndLastName(String firstName, String lastName) {
+        return template.getForObject(baseUrl + "members/register/" + firstName + lastName, Member.class, firstName, lastName);
     }
 }

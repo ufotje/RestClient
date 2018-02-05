@@ -9,4 +9,5 @@ public interface BookService {
     List<Books> findAllBooks();
     List<Books> findBookByAuthor(String author);
     List<Books> findBookByTitle(String title);
+    Books findBookByTitleAndVolume(String title, int volume);
 }

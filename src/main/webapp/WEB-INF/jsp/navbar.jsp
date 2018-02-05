@@ -45,7 +45,7 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown4-content" id="myDropdown4">
-            <a href="${pageContext.request.contextPath}title">Reserveer een boek</a>
+            <a href="${pageContext.request.contextPath}reserve">Reserveer een boek</a>
             <a href="${pageContext.request.contextPath}author">Reserveer een magazine</a>
             <a href="${pageContext.request.contextPath}topic">Reserveer een digitale drager</a>
         </div>
